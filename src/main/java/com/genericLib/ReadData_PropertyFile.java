@@ -4,8 +4,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-
-
 public class ReadData_PropertyFile {
 
 	public String readProp(String key) throws IOException
