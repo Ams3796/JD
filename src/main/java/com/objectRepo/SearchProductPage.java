@@ -1,13 +1,11 @@
 package com.objectRepo;
 
-import java.util.List;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class SearchProductPage<E> {
+public class SearchProductPage {
 	public AndroidDriver<WebElement> driver;
 	
 	@FindBy(id="com.jdmart.android:id/hint")
@@ -29,7 +27,7 @@ public class SearchProductPage<E> {
 	private WebElement first_suggestion;
 	
 	@FindBy(xpath="//android.widget.TextView[@resource-id='com.jdmart.android:id/comp_name']")
-	private WebElement suggestion_prod;
+	private WebElement suggestion_name;
 	
 	@FindBy(id="com.jdmart.android:id/productName")
 	private WebElement pdp_prodname;
@@ -74,7 +72,7 @@ public class SearchProductPage<E> {
 	}
 	
 	public WebElement getSuggestion_prod() {
-		return suggestion_prod;
+		return suggestion_name;
 	}
 	
 	public WebElement getPdp_prodname() {
@@ -100,6 +98,11 @@ public class SearchProductPage<E> {
 	
 	public WebElement getComp_address() {
 		return comp_address;
+	}
+	
+	public void compName()
+	{
+		
 	}
 	
 	

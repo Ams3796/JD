@@ -2,7 +2,10 @@ package com.genericLib;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver.Timeouts;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -35,6 +38,7 @@ public class BaseClass {
 		
 	    URL url=new URL("http://127.0.0.1:4723/wd/hub");
 	    driver=new AndroidDriver<AndroidElement>(url,dc);
+	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
 	@BeforeMethod

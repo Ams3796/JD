@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -31,6 +32,13 @@ public class DriverUtils {
 	public void backNavigation(AndroidDriver<AndroidElement> driver)
 	{
 		driver.navigate().back();
+	}
+	
+	public void scrollUsingTouchActionsByElements(PointOption startElement, PointOption endElement)
+	{
+		PerformsTouchActions driver = null;
+		TouchAction actions = new TouchAction(driver);
+		actions.press(startElement).waitAction().moveTo(endElement).release().perform();
 	}
 
 	public void bottomToTopSwipe(AndroidDriver<?> driver) {

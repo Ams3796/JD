@@ -16,13 +16,13 @@ import io.appium.java_client.android.AndroidElement;
 public class Test1 extends BaseClass {
 	DriverUtils utils=new DriverUtils();
 	ReadData_PropertyFile prop=new ReadData_PropertyFile();
-	SearchProductPage<?> spp;
+	SearchProductPage spp;
 	@Test
     public void searchproduct() throws InterruptedException, IOException
 	{
 		spp=PageFactory.initElements(driver, SearchProductPage.class);
 		
-    	spp.getSearch_bar().click();
+		spp.getSearch_bar().click();
     	spp.getCity_dropdown().click();
 		spp.getCity_seachbar().sendKeys(prop.readProp("City"));
 		spp.getCity_suggestion().click();
