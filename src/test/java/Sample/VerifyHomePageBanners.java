@@ -29,7 +29,7 @@ public class VerifyHomePageBanners extends BaseClass {
 
 		for(int i=1;i<=25;i++)
 		{
-			Thread.sleep((long) (3000*2));
+			Thread.sleep(6000);
 			
 			System.out.println("BANNER "+i+" : ");
 			

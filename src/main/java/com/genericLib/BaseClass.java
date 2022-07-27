@@ -2,7 +2,6 @@ package com.genericLib;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver.Timeouts;
@@ -25,20 +24,20 @@ public class BaseClass {
 	public void setUp() throws IOException
 	{
 		DesiredCapabilities dc=new DesiredCapabilities();
-		dc.setCapability("deviceName",prop.readProp("deviceName"));
-		dc.setCapability("automationName",prop.readProp("automationName"));
-		dc.setCapability("platformName",prop.readProp("platformName"));
-		dc.setCapability("platformVersion",prop.readProp("platformVersion"));
-		dc.setCapability("UDID",prop.readProp("UDID"));
+		dc.setCapability("deviceName","OnePlus Nord CE 5G");
+		dc.setCapability("automationName","UiAutomator2");
+		dc.setCapability("platformName","Android");
+		dc.setCapability("platformVersion","11");
+		dc.setCapability("UDID","fc3bb66d");
 		//dc.setCapability("app", "C:\\Users\\User\\Downloads\\justdial-7-5-8 (1).apk");
-		dc.setCapability("appPackage",prop.readProp("appPackage"));
-		dc.setCapability("appActivity",prop.readProp("appActivity"));
-		dc.setCapability("noReset",prop.readProp("noReset"));
-		dc.setCapability("autoGrantPermissions",prop.readProp("autoGrantPermissions"));
+		dc.setCapability("appPackage","com.jdmart.android");
+		dc.setCapability("appActivity","com.jdmart.android.SplashScreen");
+		dc.setCapability("noReset","true");
+		dc.setCapability("autoGrantPermissions","true");
 		
 	    URL url=new URL("http://127.0.0.1:4723/wd/hub");
 	    driver=new AndroidDriver<AndroidElement>(url,dc);
-	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	@BeforeMethod
